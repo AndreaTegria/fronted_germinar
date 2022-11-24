@@ -1,12 +1,16 @@
-import useParams  from "react-router-dom";
-import  getUsuario  from "../../js/getData";
+import logo from "./logo.png"
+import {useParams}  from "react-router-dom";
+import { getUsuario} from "../../js/getData";
 
 function ActualizarUsuario(props) {
     let { idUsuario } = useParams();
     let usuario = getUsuario(idUsuario);
     return (
         <div className="col-12 w-75 mx-auto">
+            <img src= {logo} alt="aqui es la ima" width="160px"/>
+            
             <h3>Pagina: Actualizar Usuario</h3>
+
             <form>
                 <div class="row g-3">
                     <div class="">

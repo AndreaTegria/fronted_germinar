@@ -1,3 +1,4 @@
+import logo2 from "./logo2.png"
 function LoginView(props) {
   return (
       <div className="w-75 mx-auto">
@@ -8,14 +9,14 @@ function LoginView(props) {
           >
               <main class="form-signin w-100 m-auto">
                   <form>
-                      <img
-                          class="mb-4"
-                          src="germinar.png"
-                          alt=""
-                          width="72"
-                          height="57"
-                      />
-                      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+                  <div className="mx-5 my-3"/>
+            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"/>
+                
+
+                <img src= {logo2} alt="aqui es la ima" width="110px"/>
+              
+                     
+                      <h2 class="h3 mb-3 fw-normal " style={{ fontFamily: "monospace",fontWeight: "lighter", color : "green", }}> Bienvenido </h2>
 
                       <div class="form-floating my-3">
                           <input

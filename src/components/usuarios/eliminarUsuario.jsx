@@ -1,6 +1,6 @@
-import {Link} from "react-router-dom";
-import  useParams  from "react-router-dom";
-import getUsuario  from "../../js/getData";
+
+import { useParams }  from "react-router-dom";
+import { getUsuario } from "../../js/getData";
 import { estadoPrincipal, setEstadoPrincipal } from "../../js/global";
 
 function EliminarUsuario(props) {

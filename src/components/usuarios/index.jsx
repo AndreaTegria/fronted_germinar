@@ -1,5 +1,5 @@
 import Table from "../table/Table";
-import getData  from "../../js/getData";
+import { getData }  from "../../js/getData";
 import MainPage from "../table/MainPage";
 import CreateButton from "../table/CreateBotton";
 import SearchBar from "../table/SearchBar";
@@ -16,9 +16,7 @@ function UsuariosIndex(props) {
     return (
         <div>
             <h3>Usuarios</h3>
-            <p style={objCss}>
-                Bienvenidos a la pagina de administracion de usuarios
-            </p>
+           
           
             <MainPage
                 data={datosTabla}

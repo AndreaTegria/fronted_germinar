@@ -1830,8 +1830,19 @@ let usuarios = [
     }
 ];
 
-function getData(url,headers,httpMethod,data){
+function getData(url, headers, httpMethod, data) {
     return usuarios;
 }
 
-export default getData;
+function getUsuario(id) {
+    let result = {};
+    for (let i = 0; i < usuarios.length; i++) {
+        if (usuarios[i].id == id) {
+            result = usuarios[i];
+            break;
+        }
+    }
+    return result;
+}
+
+export { getData, getUsuario };
