@@ -1,6 +1,12 @@
+import { getRequest } from "../../js/getData";
+let backendConfig = require("../../js/backendConfig");
+let { useNavigate } = require("react-router-dom");
 
 
 function CreateUsuario(props) {
+    let navigate = useNavigate();
+    navigate("/usuarios");
+
     return (
         <div className="col-12 w-75 mx-auto">
             <h3>Pagina: Crear Usuario</h3>
@@ -84,7 +90,16 @@ function CreateUsuario(props) {
                     <button
                         class="w-100 btn btn-primary btn-lg"
                         type="submit"
-                        onClick={onClickSubmit}
+                      
+                                                        
+                            onClick={(e) => {
+                             
+                                onClickSubmit(navigate);
+                            }}
+                            
+                                                        
+                            
+                        
                     >
                         Continue to checkout
                     </button>
@@ -94,8 +109,34 @@ function CreateUsuario(props) {
     );
 }
 
-function onClickSubmit(e) {
-    console.log(e);
+function onClickSubmit(navigate) {
+    let url = backendConfig.FULL_API_PATH + "usuarios/create";
+    let firstName = document.getElementById("firstName").value;
+    let username = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let data = {
+        firstName,
+        username,
+        email,
+        password,
+    };
+    console.log(firstName);
+    let promiseCreate = getRequest(url, {}, "post", data);
+    promiseCreate
+        .then(function (res) {
+        
+            if (res.status < 300) {
+                console.log("usuario creado");
+                navigate("/usuarios");
+              
+
+            }
+             console.log(res);
+        })
+        .catch(function (err) {
+            console.log(err);
+        });
 }
 
 export default CreateUsuario;
