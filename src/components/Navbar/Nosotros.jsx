@@ -1,6 +1,6 @@
 import logo2 from "./logo2.png"
 import img1 from "./img1.png"
-import UncontrolledExample from "./UncontrolledExample";
+
 
 function Nosotros(props){
     return(

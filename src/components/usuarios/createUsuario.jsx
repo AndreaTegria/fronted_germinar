@@ -1,5 +1,5 @@
 import { getRequest } from "../../js/getData";
-let backendConfig = require("../../js/backendConfig");
+let backendConfig = require("../../config");
 let { useNavigate } = require("react-router-dom");
 
 

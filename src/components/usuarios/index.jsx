@@ -1,31 +1,29 @@
 import Table from "../table/Table";
 import { useState } from "react";
-import { getData, getRequest } from "../../js/getData";
+import { getRequest } from "../../js/getData";
 import MainPage from "../table/MainPage";
 import CreateButton from "../table/CreateBotton";
 import SearchBar from "../table/SearchBar";
 import BodyIndex from "./bodyIndex";
 import { useEffect } from "react";
-import backendConfig from "../../js/backendConfig";
-
+import { loadData } from "../../js/getData";
+import backendConfig from "../../config";
 let objCss = {
     border: "6px solid red",
 };
 
 function UsuariosIndex(props) {
-    const [datosTabla, setDatosTabla] = useState([]);
+    let data = loadData();
+    const [datosTabla, setDatosTabla] = useState(data);
     const [state, setState] = useState("loading");
     const [error, setError] = useState("");
-
-    useEffect(() => {
-        console.log(backendConfig.FULL_API_PATH + "usuarios/all");
+    useEffect(function () {
         let promiseData = getRequest(
             backendConfig.FULL_API_PATH + "usuarios/all",
             {},
             "get",
             {}
         );
-
         promiseData
             .then(function (response) {
                 console.log(response);
